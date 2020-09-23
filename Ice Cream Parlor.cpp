@@ -7,30 +7,28 @@ int main() {
 	int t;
 	cin >> t;
 	while (t--) {
-		long money;
+	    cout << t << "th pass" << " \n";
+		long money; 
 		cin >> money;
 
 		int n;
 		cin >> n;
 		
-		long temp;
+		long max = 0;
 
-		map<long,int> map1;
+		int a[n];
+
 		for (int i=0;i<n;i++) {
-			cin >> temp;
-			map1.insert(pair<long,int>(temp,++i));
+			cin >> a[i];
+			if (max < a[i])	max = a[i];
 		}
 
-		map<long,int> :: iterator pair_loc;
-    
-        long val;
-        
-		for (auto itr = map1.begin();itr != map1.end(); itr++) {
-		    
-		    val = money - *itr;
-			pair_loc = map1.find(val);
+		vector<int> hash(max,0);
+		
+		for (int i=0;i<n;i++)	hash[a[i]-1] = i+1;
 
-			if (pair_loc != map1.end())	cout << itr->second << " " << pair_loc->second << "\n"; 
+		for (int i=0;i<=n/2;i++) {
+			if(hash[money-a[i]] > 0)	cout << i+1 << " " << hash[money-a[i]] << "\n";
 		}
 	}
 	return 0;
