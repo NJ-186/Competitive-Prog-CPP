@@ -7,10 +7,9 @@ int main() {
     cin.tie(NULL);
 
     int t;
-    cin >> t;
+    cin >> t;	
     while (t--) {
-    	long long n;
-    	long b;
+    	long n,b;
     	int a;
 
     	cin >> n >> a >> b;
@@ -21,8 +20,8 @@ int main() {
 
     	for(int i=2;i<n;i++) {
     		b = sum;
-    		sum = ( sum + b ) % 10;
-    		result +=sum; 
+    		sum = ( result + b ) % 10;
+    		result +=b; 
     	}
 
     	if ( result % 3 == 0)	cout << "YES";
