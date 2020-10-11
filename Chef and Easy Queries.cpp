@@ -3,29 +3,32 @@
 using namespace std;
 
 int main() {
-	ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     int t;
     cin >> t;
     while (t--) {
-    	int n;
-    	long k;
-    	cin >> n >> k;
+        int n;
+        long k;
+        cin >> n >> k;
 
-    	vector<long> q(n);
+        vector<long> q(n);
 
-    	for (int i=0;i<n;i++)	cin >> q[i];
+        for (int i=0;i<n;i++)   cin >> q[i];
 
-    	int days = 0;
-    	long final = q[0] - k;
+        int carry = 0;
+        int j = 0;
+        long day = 0;
+        do {
+            j++;
+            day = j < n+1 ? q[j-1] : 0 ;
+            carry = carry + day - k;
+           // cout << carry << " ";
+            if (carry < 0)  break;
+        }while (true);
 
-    	for (int i=0;i<n;i++) {
-    		if (q[i] < final) {
-    		days = 
-    	}
-    	}
-    
+        cout << j << "\n";
     }
     return 0;
 }
