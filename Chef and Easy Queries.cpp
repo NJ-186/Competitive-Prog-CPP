@@ -2,7 +2,8 @@
 #include <vector>
 using namespace std;
 
-// Still Not running
+// Still Not running. Dont know, it shows WA. 
+// Need to work on this a bit more.
 
 int main() {
     ios_base::sync_with_stdio(false);
